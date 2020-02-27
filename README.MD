@@ -13,12 +13,12 @@ npm install ok-uncomment
 
 ## Usage
 
-const noComments = require("ok-uncomment");
+const unComment = require("ok-uncomment");
 
 
 ### Syntax
 
-**noComments( source ) -> result**
+**unComment( source ) -> result**
 
 - Parameters
 	- source *string*
@@ -27,7 +27,7 @@ const noComments = require("ok-uncomment");
 Function throws an error object in case of failure.
 
 
-**noComments( onError, onSuccess, source )**
+**unComment( onError, onSuccess, source )**
 
 - Parameters: 
 	- onError *function(error)*
@@ -52,8 +52,8 @@ Function does not throw error object in case of failure.
 	   
 	function uncommentFile(filename) {
 		const fs = require("fs");
-		const noComments = require("ok-uncomment");
-		return noComments( fs.readFileSync(filename).toString());
+		const unComment = require("ok-uncomment");
+		return unComment( fs.readFileSync(filename).toString());
 	}
        
 	console.log(uncommentFile("example.js"));
@@ -61,7 +61,6 @@ Function does not throw error object in case of failure.
 
       
 	function parseJsonFile(filename) {
-		const noComments = require("ok-uncomment");
 		try {
 			return JSON.parse( uncommentFile( filename ));
 		}
