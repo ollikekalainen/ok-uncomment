@@ -1,0 +1,36 @@
+{
+	"items": [
+		{   // First item, isn't it
+			"name": "A", /* Named as A */
+			"qualityLevel": 8,
+			"disabled": false
+		}, 
+/*	
+Following 3 items not needed now. Let's comment them out.
+		{
+			"name": "B", /* Named as B */
+			"qualityLevel": 8,
+			"disabled": false
+		},
+		{
+			"name": "C", /* Named as C */
+			"qualityLevel": 8,
+			"disabled": false
+		},
+		{
+			"name": "D", /* Named as D */
+			"qualityLevel": 8,
+			"disabled": false
+		},
+*/		{
+			"name": "E", /* Named as E */
+			"qualityLevel": 8,
+			"disabled": false
+		},
+		{
+			"name": "F", /* Named as F */
+			"qualityLevel": 8,
+			"disabled": false
+		}
+	]   
+}

@@ -1,0 +1,27 @@
+{
+  "main": "ok-uncomment.js",
+  "name": "ok-uncomment",
+  "version": "1.0.0",
+  "description": "Remove line and block comments from a string",
+  "dependencies": {
+  },
+  "scripts": {
+  },
+  "engines": {
+    "node": ">= 8.11.3"
+  },
+  "bugs": "https://github.com/ollikekalainen/ok-uncomment/issues",
+  "keywords": [
+    "javascript",
+    "uncomment",
+    "comments",
+    "nested comments"
+  ],
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/ollikekalainen/ok-uncomment.git"
+  },
+  "homepage": "https://github.com/ollikekalainen/ok-uncomment",
+  "author": "Olli Kekäläinen",
+  "license": "MIT"
+}
