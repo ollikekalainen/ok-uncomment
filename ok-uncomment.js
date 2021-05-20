@@ -38,7 +38,7 @@
 
 
 
- 20200227
+ 20210520
 -----------------------------------------------------------------------------------------
 */
 
@@ -56,7 +56,7 @@ function unComment( onError, onSuccess, source ) {
 	const length = s.length;
 	const SINGLEQUOTE = "'", DOUBLEQUOTE = '"', BACKTICK = "`";
 	const LINEBREAK_1 = process.platform == "win32" ? "\r" : "\n";
-	const isRegExpDelim = c => !c||" \t\r\n(,=:[!&|?{};\/".indexOf(c)>-1;
+	const isRegExp = c => /[(,=:[!&|?{};\/]/.test(c||"?");
 
 	let quote = undefined;
 	let blockComment = 0;
@@ -70,9 +70,11 @@ function unComment( onError, onSuccess, source ) {
 	let backTicRow = 0;
 	let blockCommentRow = 0;
 	let regexpRow;
+	let previousNonWhite;
 
 	while (i < length) {
 		previous = char;
+		/\s/.test(previous) || (previousNonWhite = previous);
 		char = s[i];
 		char == "\n" && row++;
 		if (!quote && !regexp && !lineComment) {
@@ -96,7 +98,7 @@ function unComment( onError, onSuccess, source ) {
 					i += 2;
 					continue;
  				}
- 				else if (regexp = isRegExpDelim(previous)) {
+ 				else if (regexp = isRegExp(previousNonWhite)) {
 					regexpRow = row;
 					target += char;
  					++i;
@@ -183,21 +185,3 @@ function unComment( onError, onSuccess, source ) {
 		}
 	}
 }
-
-function __debug(s,row) {
-	const __solve = (c) => {
-		if (c=="\r") {
-			return "\\r";
-		}
-		else if (c=="\n") {
-			return "\\n";
-		}
-		return c;
-	};
-	let m = "";
-	s.split("").forEach((c) => {
-		m += __solve(c);
-	});
-	console.log( (row ? (row + ": ") : "") + m);
-}
-

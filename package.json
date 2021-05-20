@@ -1,7 +1,7 @@
 {
   "main": "ok-uncomment.js",
   "name": "ok-uncomment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Remove line and block comments from a string",
   "dependencies": {
   },
